@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IFBOX｜「もし」を、みんなで形に。</title>
+<meta name="description" content="思いついたことを1行書くと、紹介ページができます。そのページで、仲間も、完成前に申し込んでくれる人も集められます。">
+<meta property="og:title" content="IFBOX｜「もし」を、みんなで形に。">
+<meta property="og:description" content="1行のアイデアから、仲間集め・完成前の販売・お届けまで。">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFDF7;--card:#fff;--navy:#0E2A5B;--ink:#1d2433;--ink2:#4a5468;--ink3:#7b8496;--line:#e8e2d3;--coral:#E85B52;--coral-deep:#c8443c;--gold:#F6A623;--gold-soft:#FFF3D9;--gold-deep:#8F5A08;--sky:#289FE3;--ok:#2E9B62;
+  --head:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;--body:"Noto Sans JP",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);color:var(--navy);line-height:1.35;margin:0;text-wrap:balance}
+.em{color:var(--coral)}
+
+/* お試し版の帯とナビ */
+.trial{background:var(--gold-soft);color:var(--gold-deep);font-size:12.5px;font-weight:700;text-align:center;padding:6px 12px}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,253,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .w{display:flex;align-items:center;gap:18px;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--head);font-weight:900;color:var(--navy);text-decoration:none;font-size:19px}
+.logo i{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--gold);color:#fff;font-style:normal;font-size:14px}
+.top nav{margin-left:auto;display:flex;gap:18px;font-size:14px;font-weight:700}
+.top nav a{text-decoration:none;color:var(--ink2)}.top nav a:hover{color:var(--coral)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--coral);color:#fff;font-weight:900;text-decoration:none;border-radius:999px;padding:13px 26px;font-size:16px;box-shadow:0 6px 16px rgba(232,91,82,.28);transition:transform .15s,background .15s}
+.btn:hover{background:var(--coral-deep);transform:translateY(-1px)}
+.btn.s{padding:8px 16px;font-size:13.5px;box-shadow:none}
+.btn.navy{background:var(--navy);box-shadow:0 6px 16px rgba(14,42,91,.22)}.btn.navy:hover{background:#0a1f45}
+.btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy);box-shadow:none}
+@media(max-width:760px){.top nav a:not(.btn){display:none}}
+
+/* ヒーロー */
+.hero{padding:44px 0 56px}
+.hero .w{display:grid;grid-template-columns:1.02fr 1fr;gap:44px;align-items:center}
+.hero h1{font-size:50px;letter-spacing:.01em}
+.hero .lead{font-size:17.5px;color:var(--ink2);margin:18px 0 26px;max-width:30em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .note{font-size:13px;color:var(--ink3);margin-top:14px}
+.shot{position:relative}
+.shot img{border-radius:24px;box-shadow:0 18px 44px rgba(14,42,91,.18);aspect-ratio:4/3;object-fit:cover;width:100%}
+.bubble{position:absolute;left:-26px;bottom:-26px;width:min(330px,82%);background:#fff;border-radius:18px;box-shadow:0 12px 30px rgba(14,42,91,.2);padding:14px 16px;border:1px solid var(--line)}
+.bubble .lb{font-size:11.5px;font-weight:700;color:var(--ink3)}
+.bubble .in{margin-top:6px;border:2px solid var(--coral);border-radius:12px;padding:9px 12px;font-weight:700;font-size:15px;line-height:1.5;color:var(--navy)}
+.bubble .in:after{content:"";display:inline-block;width:2px;height:1.05em;background:var(--coral);vertical-align:-3px;margin-left:2px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.bubble .go{margin-top:9px;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--sky);font-weight:700}
+.bubble .go b{background:var(--gold);color:#fff;border-radius:999px;padding:5px 12px;font-size:12.5px}
+@media(max-width:860px){.hero{padding:28px 0 60px}.hero .w{grid-template-columns:1fr;gap:30px}.hero h1{font-size:36px}.bubble{left:10px;bottom:-34px}}
+
+/* 見出し */
+section{padding:72px 0}
+.sh{text-align:center;margin-bottom:40px}
+.sh .k{display:inline-block;font-size:12.5px;font-weight:900;letter-spacing:.12em;color:var(--coral);background:#fff;border:1.5px solid var(--coral);border-radius:999px;padding:3px 14px;margin-bottom:12px}
+.sh h2{font-size:34px}.sh p{color:var(--ink2);margin:12px auto 0;max-width:36em}
+@media(max-width:760px){section{padding:54px 0}.sh h2{font-size:26px}}
+
+/* 3行でわかる */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.three div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 20px}
+.three b{display:block;font-family:var(--head);font-size:19px;color:var(--navy);margin-bottom:6px}
+.three span{font-size:14.5px;color:var(--ink2)}
+.three .n{font-family:var(--head);font-weight:900;color:var(--gold);font-size:15px}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
+
+.nowthen{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1.5px solid var(--gold);border-radius:18px;overflow:hidden;margin-bottom:22px}
+.nowthen div{padding:14px 20px}.nowthen div+div{border-left:1.5px dashed var(--gold)}
+.nowthen b{display:block;color:var(--gold-deep);font-size:13.5px}.nowthen span{font-size:14.5px;color:var(--ink2)}
+@media(max-width:760px){.nowthen{grid-template-columns:1fr}.nowthen div+div{border-left:0;border-top:1.5px dashed var(--gold)}}
+
+/* 4歩 */
+.flow{background:#FBF6E9}
+.story{display:inline-flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 16px;font-size:14px;margin-top:16px;text-align:left}
+.story b{color:var(--navy)}
+.step{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:56px}
+.step:nth-of-type(even) .ph{order:2}
+.ph{position:relative}.ph img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;width:100%;box-shadow:0 12px 30px rgba(14,42,91,.14)}
+.ph .who{position:absolute;left:12px;bottom:12px;background:rgba(14,42,91,.86);color:#fff;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px}
+.tx .num{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--head);font-weight:900;font-size:22px;margin-bottom:10px}
+.tx h3{font-size:27px}.tx p{color:var(--ink2);margin:8px 0 16px}
+@media(max-width:860px){.step{grid-template-columns:1fr;gap:18px;margin-top:44px}.step:nth-of-type(even) .ph{order:0}.tx h3{font-size:22px}}
+
+/* 実物の画面（HTMLで描く） */
+.ui{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:0 6px 18px rgba(14,42,91,.08);font-size:14px;line-height:1.6}
+.ui .cap{font-size:11.5px;color:var(--ink3);font-weight:700;margin-bottom:8px;display:flex;justify-content:space-between}
+.ui .cap em{font-style:normal;color:var(--sky)}
+.role{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px dashed var(--line)}.role:first-of-type{border-top:0}
+.role i{flex:0 0 22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:900;color:#fff;background:var(--ok)}
+.role i.o{background:#fff;border:2px solid var(--coral);color:var(--coral)}
+.role b{color:var(--navy)}.role span{margin-left:auto;font-size:12.5px;color:var(--ink3)}.role span.need{color:var(--coral);font-weight:700}
+.price{display:flex;align-items:baseline;gap:10px}.price b{font-size:26px;font-weight:900;color:var(--navy)}.price s{font-size:12.5px;color:var(--ink3);text-decoration:none}
+.bar{height:10px;border-radius:99px;background:#f0eadb;overflow:hidden;margin:10px 0 6px}.bar i{display:block;height:100%;width:38%;background:var(--coral);border-radius:99px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink2)}.meta b{color:var(--navy)}
+.pill{display:inline-block;background:var(--gold);color:#fff;border-radius:999px;font-size:11.5px;font-weight:900;padding:2px 10px}
+.upd{border-left:3px solid var(--gold);padding-left:12px}.upd b{color:var(--navy)}.upd small{color:var(--ink3);display:block}
+.rule{margin-top:10px;border:1.5px solid var(--navy);border-radius:12px;padding:8px 12px;font-size:13px;color:var(--navy);font-weight:700}
+.ord{display:flex;align-items:center;gap:10px}.ord .st{margin-left:auto;background:#E5F5EC;color:var(--ok);font-weight:900;font-size:12px;border-radius:999px;padding:3px 10px}
+.pay{margin-top:10px;background:var(--gold-soft);color:var(--gold-deep);border-radius:12px;padding:9px 12px;font-weight:900;font-size:14px;text-align:center}
+
+/* 2つの入口 */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.door{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.door .hd{padding:16px 22px;color:#fff;font-family:var(--head);font-weight:900;font-size:24px;display:flex;align-items:baseline;gap:10px}
+.door .hd small{font-size:13px;font-family:var(--body);font-weight:500;opacity:.92}
+.door.make .hd{background:var(--coral)}.door.back .hd{background:var(--navy)}
+.door ul{list-style:none;margin:0;padding:18px 22px 6px}.door li{padding:9px 0 9px 30px;position:relative;border-top:1px dashed var(--line);font-weight:700;color:var(--navy)}
+.door li:first-child{border-top:0}.door li:before{content:"✓";position:absolute;left:2px;color:var(--ok);font-weight:900}
+.door li small{display:block;font-weight:400;color:var(--ink2);font-size:13.5px}
+.door .ft{padding:12px 22px 22px;margin-top:auto}
+@media(max-width:760px){.doors{grid-template-columns:1fr}}
+
+/* 役割 */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rc{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 20px;text-align:center}
+.rc svg{width:44px;height:44px;stroke:var(--coral);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.rc b{display:block;font-family:var(--head);font-size:20px;color:var(--navy)}.rc span{font-size:14px;color:var(--ink2)}
+.bigrule{margin:22px auto 0;max-width:760px;border:2px solid var(--navy);border-radius:18px;padding:16px 22px;background:#fff;color:var(--navy);font-weight:700;text-align:center}
+.bigrule small{display:block;font-weight:400;color:var(--ink2);margin-top:4px}
+@media(max-width:760px){.roles{grid-template-columns:1fr}}
+
+/* お金 */
+.money{background:#FBF6E9}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mc{background:#fff;border-radius:20px;border:1px solid var(--line);padding:22px 20px}
+.mc .big{font-family:var(--head);font-weight:900;font-size:30px;color:var(--coral);line-height:1.2}
+.mc b{display:block;color:var(--navy);margin:6px 0 4px}.mc span{font-size:14px;color:var(--ink2)}
+@media(max-width:760px){.mgrid{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 20px;margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;font-weight:700;color:var(--navy);position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";position:absolute;right:0;top:14px;color:var(--coral);font-weight:900}
+details[open] summary:after{content:"－"}
+details p{margin:0 0 16px;color:var(--ink2);font-size:15px}
+
+/* しめ */
+.last{background:var(--navy);color:#fff;text-align:center}
+.last h2{color:#fff;font-size:34px}.last p{opacity:.9;margin:12px 0 26px}
+.last .btn.ghost{border-color:#fff;background:transparent;color:#fff}
+footer{background:#0a1f45;color:rgba(255,255,255,.72);font-size:12.5px;text-align:center;padding:24px 20px;line-height:1.9}
+.ainote{font-size:12px;color:var(--ink3);text-align:center;margin-top:34px}
+</style>
+</head>
+<body>
+<div class="trial">お試し版｜支払いはありません。自由にさわってみてください。</div>
+<header class="top"><div class="w">
+  <a class="logo" href="#" aria-label="IFBOX"><i aria-hidden="true">IF</i><span>IFBOX</span></a>
+  <nav><a href="#flow">進み方</a><a href="#doors">2つの入口</a><a href="#roles">3つの役割</a><a href="#money">お金のこと</a><a href="#faq">よくある質問</a><a class="btn s" href="https://mgomita-ui.github.io/ifbox/proto/">試作をさわる</a></nav>
+</div></header>
+
+<section class="hero"><div class="w">
+  <div>
+    <h1>「<span class="em">もし</span>」を、<br>みんなで<span class="em">形</span>に。</h1>
+    <p class="lead">思いついたことを1行書くと、紹介ページができます。そのページで、いっしょに作る仲間も、完成前に申し込んでくれる人も集められます。</p>
+    <div class="ctas"><a class="btn" href="#doors">つくる人はこちら</a><a class="btn navy" href="#doors">おうえんする人はこちら</a></div>
+    <p class="note">登録は呼び名だけ。本名は使わないでください。いまはお試し版なので、支払いも実際のお届けもありません。</p>
+  </div>
+  <div class="shot">
+    <picture><source media="(max-width:700px)" srcset="img/hero-800.jpg"><img src="img/hero.jpg" width="1600" height="1195" alt="夜の台所で、冷蔵庫の中を見ながらスマホを手にする人"></picture>
+    <div class="bubble">
+      <div class="lb">アイデアを1行で</div>
+      <div class="in">もし、冷蔵庫を撮るだけで献立が決まったら</div>
+      <div class="go"><span>AIが下書きします</span><b>紹介ページを作る</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:36px"><div class="w">
+  <div class="nowthen"><div><b>いまできること</b><span>操作を試す版です。実際の注文・支払い・お届けはありません。</span></div><div><b>このページに書いてあること</b><span>正式版で目指している使い方です。画面はすべて操作のイメージです。</span></div></div>
+  <div class="three">
+    <div><span class="n">その1</span><b>書くのは、1行だけ。</b><span>「もし、こうだったら」を1行。誰の役に立つかを添えると、紹介ページの下書きをAIが用意します。</span></div>
+    <div><span class="n">その2</span><b>仲間も、買う人も、同じページで。</b><span>IFBOXでは、仲間を探すところから紹介ページを使えます。同じページで、完成前の申し込みも集められます。</span></div>
+    <div><span class="n">その3</span><b>支払いは、届いたあと。</b><span>正式版で目指している支払い方です。目標額に届いた計画だけが動き出し、届かなければ返金します。決済方法と返金の条件は検討中です。</span></div>
+  </div>
+</div></section>
+
+<section class="flow" id="flow"><div class="w">
+  <div class="sh"><span class="k">進み方</span><h2>計画の進み方は、4歩。</h2>
+    <p>ひとつの計画を、最初から最後まで追いかけてみます。</p>
+    <div class="story"><span class="pill">例</span><span><b>もし、冷蔵庫を撮るだけで献立が決まったら</b>　夜に料理する一人暮らしの人へ</span></div>
+    <p style="font-size:14px;margin-top:14px">チームの役割は3つ：<b style="color:var(--navy)">つくる</b>／<b style="color:var(--navy)">確かめて良くする</b>／<b style="color:var(--navy)">ひろめる</b></p>
+  </div>
+
+  <div class="step">
+    <div class="ph"><picture><source media="(max-width:700px)" srcset="img/step1-800.jpg"><img loading="lazy" src="img/step1.jpg" width="1600" height="1195" alt="3人がテーブルで計画について話している"></picture><span class="who">始めた人と、手を挙げてくれた2人</span></div>
+    <div class="tx"><span class="num">1</span><h3>仲間を集める</h3><p>3つの役割がそろうまで。紹介ページを見た人が、手伝えそうな役割に手を挙げます。始めた人が受けると、参加が決まります。</p>
+      <div class="ui"><div class="cap"><span>この計画の役割</span><span>画面の例</span></div>
+        <div class="role"><i>✓</i><b>つくる</b><span>さくら（始めた人）・けん</span></div>
+        <div class="role"><i class="o"></i><b>確かめて良くする</b><span class="need">あと1人募集</span></div>
+        <div class="role"><i>✓</i><b>ひろめる</b><span>みか</span></div>
+      </div></div>
+  </div>
+
+  <div class="step">
+    <div class="ph"><picture><source media="(max-width:700px)" srcset="img/step2-800.jpg"><img loading="lazy" src="img/step2.jpg" width="1600" height="1195" alt="昼休みに、同僚2人へスマホの画面を見せている"></picture><span class="who">「ひろめる」役が、職場で紹介</span></div>
+    <div class="tx"><span class="num">2</span><h3>申し込みを集める</h3><p>完成する前に、買えるものを並べて申し込みを集めます。期限までに、申し込みの合計が目標額に届いたら、つくり始めます。届かなければ、注文は成立しません。</p>
+      <div class="ui"><div class="cap"><span>買えるもの　<span class="pill">販売中</span></span><span>画面の例・実際には買えません</span></div>
+        <div style="font-weight:700;color:var(--navy)">献立アプリ 3か月の利用券（早割）</div>
+        <div class="price"><b>2,400円</b><s>申し込み19件　残り11／限定30</s></div>
+        <div class="bar"><i></i></div>
+        <div class="meta"><span><b>目標額の38%</b></span><span>45,600円／目標120,000円</span><span>目標まであと74,400円</span><span>終了まで21日</span></div>
+      </div></div>
+  </div>
+
+  <div class="step">
+    <div class="ph"><picture><source media="(max-width:700px)" srcset="img/step3-800.jpg"><img loading="lazy" src="img/step3.jpg" width="1600" height="1195" alt="自宅の冷蔵庫をスマホで撮って試している人。横に確認用の表"></picture><span class="who">あとから加わった「確かめて良くする」役が、自宅で試す</span></div>
+    <div class="tx"><span class="num">3</span><h3>つくって、確かめて、良くする</h3><p>「確かめて良くする」役が、買う人の立場で使ってみて、気づいたことを伝えます。「つくる」役が直し、もう一度確かめます。これはチームの中の仕事で、買った人に感想や手直しを求めることはありません。</p>
+      <div class="ui"><div class="cap"><span>進み具合のお知らせ</span><span>画面の例</span></div>
+        <div class="upd"><b>試作1号を3人に使ってもらいました</b><small>写真の撮り方で結果がぶれることが分かりました。撮影の案内を足します。お届け予定は変えません。</small></div>
+        <div class="rule">つくる人は「確かめて良くする」にはなれません。</div>
+      </div></div>
+  </div>
+
+  <div class="step">
+    <div class="ph"><picture><source media="(max-width:700px)" srcset="img/step4-800.jpg"><img loading="lazy" src="img/step4.jpg" width="1600" height="1195" alt="スマホを横に立てて、台所で野菜炒めを作っている人"></picture><span class="who">申し込んだ人に届いて、今夜の一皿</span></div>
+    <div class="tx"><span class="num">4</span><h3>届けて、支払い</h3><p>買った人に、感想や手直しの役割はありません。届いたものを受け取って、使ってください。お金は、始める前に決めた分け方で、チームに分けられます。</p>
+      <div class="ui"><div class="cap"><span>申し込みの確認</span><span>画面の例</span></div>
+        <div class="ord"><span><b style="color:var(--navy)">早割</b>　2,400円</span><span class="st">届きました</span></div>
+        <div class="pay">支払いは、届いたあと。届かなければ返金します。</div>
+        <div style="font-size:12px;color:var(--ink3);margin-top:6px;text-align:center">正式版で目指す支払い方です。決済方法と返金の条件は検討中です。</div>
+      </div></div>
+  </div>
+  <p class="ainote">写真はイメージです（AIで生成）。画面は試作の表示をもとに描いた操作のイメージで、名前・品物・数字は説明用の例です。</p>
+</div></section>
+
+<section id="doors"><div class="w">
+  <div class="sh"><span class="k">2つの入口</span><h2>あなたは、どちらから？</h2><p>画面の上で、いつでも切りかえられます。両方やっても大丈夫です。</p></div>
+  <div class="doors">
+    <div class="door make"><div class="hd">つくる<small>アイデアがある人・手伝いたい人</small></div>
+      <ul><li>アイデアを書く<small>1行で大丈夫。紹介ページの下書きはAIが用意します。</small></li><li>仲間を集める・仲間になる<small>手伝えそうな役割に手を挙げるだけ。</small></li><li>完成前に販売する<small>目標額と期限を決めて、申し込みを集めます。</small></li></ul>
+      <div class="ft"><a class="btn" href="https://mgomita-ui.github.io/ifbox/proto/">つくる側をさわってみる</a></div></div>
+    <div class="door back"><div class="hd">おうえん<small>買って応援したい人</small></div>
+      <ul><li>買えるものを見る<small>内容・値段・お届け予定を確かめられます。</small></li><li>「気になる」に入れる<small>販売が始まったら、知らせが届きます。</small></li><li>完成する前に申し込む<small>誰が作り、誰が確かめるのかが見えます。</small></li></ul>
+      <div class="ft"><a class="btn navy" href="https://mgomita-ui.github.io/ifbox/proto/">おうえん側をさわってみる</a></div></div>
+  </div>
+</div></section>
+
+<section id="roles" style="padding-top:20px"><div class="w">
+  <div class="sh"><span class="k">3つの役割</span><h2>役割は、3つだけ。</h2><p>1人がいくつか受け持っても、1つの役割を何人かで受け持ってもかまいません。</p></div>
+  <div class="roles">
+    <div class="rc"><svg viewBox="0 0 48 48"><path d="M30 8a9 9 0 0 0-8.5 12L8 33.5 14.5 40 28 26.500A9 9 0 0 0 40 18l-6 6-6-2-2-6 6-6z"/></svg><b>つくる</b><span>アイデアを形にする。場所や道具を出すのもここ。</span></div>
+    <div class="rc"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="12"/><path d="M30 30l10 10M15.500 21l4 4 7-8"/></svg><b>確かめて良くする</b><span>チームの中で、買う人の立場に立って確かめる。</span></div>
+    <div class="rc"><svg viewBox="0 0 48 48"><path d="M8 20v8h6l14 8V12l-14 8H8zM34 18a8 8 0 0 1 0 12M38 13a14 14 0 0 1 0 22M14 28l3 10h5l-2-8"/></svg><b>ひろめる</b><span>欲しい人を探して、届ける準備をする。</span></div>
+  </div>
+  <div class="bigrule">つくる人は「確かめて良くする」にはなれません。<small>作った本人以外が確かめるから、買う人が安心できます。</small></div>
+</div></section>
+
+<section class="money" id="money"><div class="w">
+  <div class="sh"><span class="k">お金のこと</span><h2>はじめるのに、お金はかかりません。</h2><p>いまはお試し版なので、支払いは一切ありません。以下は正式版の予定です。</p></div>
+  <div class="mgrid">
+    <div class="mc"><div class="big">0円</div><b>書く・集める・参加する</b><span>アイデアを書くのも、仲間を集めるのも、役割に手を挙げるのも無料です。</span></div>
+    <div class="mc"><div class="big">成立したときだけ</div><b>IFBOXの中で販売する場合</b><span>正式版では、販売が成立した場合に手数料がかかる予定です。料率・計算方法・支払い時期は、販売の申し込みを受け付ける前にお知らせします。</span></div>
+    <div class="mc"><div class="big">ほかのサイトでも</div><b>販売の場所は選べます</b><span>ほかのクラウドファンディングサイトで販売してもかまいません。その場合、IFBOXへの支払いはありません。販売先のサイトの手数料や条件をご確認ください。</span></div>
+  </div>
+  <div class="bigrule" style="border-color:var(--coral);color:var(--coral-deep)">お金の分け方は、始める前にチームで決めて、みんなに見せます。</div>
+</div></section>
+
+<section id="faq"><div class="w">
+  <div class="sh"><span class="k">よくある質問</span><h2>気になること</h2></div>
+  <div class="faq">
+    <details><summary>いまは何ができますか？</summary><p>お試し版です。アイデアを書く、役割に手を挙げる、買えるものを並べる、申し込む、までを一通りさわれます。支払いも、実際のお届けもありません。</p></details>
+    <details><summary>アイデアだけで、自分では作れません。</summary><p>大丈夫です。1行書いて紹介ページを出せば、「つくる」に手を挙げる人を待てます。始めた人への取り分も、最初に決めて見せられます。</p></details>
+    <details><summary>目標額に届かなかったら、どうなりますか？</summary><p>正式版では、期限までに申し込みの合計が目標額に達した場合だけ、注文が成立する予定です。達しなければ、注文は成立せず、支払いも発生しません。お試し版の申し込みは操作の体験で、実際の注文にはなりません。</p></details>
+    <details><summary>支払いや返金の仕組みは、もう決まっていますか？</summary><p>いいえ。正式版では「支払いは、届いたあと。届かなければ返金します。」という方針を目指しています。決済の方法や、返金の条件、誰が代金を受け取り誰が返金を行うかは、正式版で申し込みを受け付ける前にお知らせします。いまのお試し版では、実際の注文・支払い・お届けは発生しません。</p></details>
+    <details><summary>買ったら、感想や手直しを求められますか？</summary><p>いいえ。買った人に、感想や手直しを求めることはありません。確かめるのはチームの中の「確かめて良くする」役、直すのは「つくる」役の仕事です。</p></details>
+    <details><summary>ほかのクラウドファンディングサイトを使ってもいいですか？</summary><p>かまいません。IFBOXで仲間を集めて、販売は別のサイトで行えます。その場合、IFBOXへの支払いはありません。申し込み・支払い・返金は、販売先のサイトと販売する人が示す条件に従います。IFBOXが目指す「届いたあとに支払う」仕組みは、別のサイトでの販売には当てはまりません。</p></details>
+    <details><summary>入れてはいけない情報はありますか？</summary><p>お試し版では、文章にも画像にも、本名・住所・カード番号・口座番号などを入れないでください。登録は呼び名だけで、本人かどうかは確認していません。</p></details>
+  </div>
+</div></section>
+
+<section class="last"><div class="w">
+  <h2>まずは、1行書いてみる。</h2>
+  <p>サンプルの計画が20件入っています。開いて、さわって、確かめてください。</p>
+  <div class="ctas" style="justify-content:center"><a class="btn" href="https://mgomita-ui.github.io/ifbox/proto/">試作をさわる</a><a class="btn ghost" href="https://mgomita-ui.github.io/ifbox/manual/ifbox-guide.pdf">使い方ガイド（PDF・5枚）</a></div>
+</div></section>
+<footer>
+  <div><b style="color:#fff">IFBOX　お試し版</b></div>
+  <div>運営：IFBOX準備チーム（仮）　※会社は設立前です。</div>
+  <div>お問い合わせ：窓口を準備中です（仮）。</div>
+  <div>入力した内容の扱い：公開中の試作は、入力した内容を保存しません。ページを閉じると消えます。</div>
+  <div style="margin-top:8px;opacity:.8">写真はAIで生成したイメージです。画面と数字は説明用の例です。</div>
+</footer>
+</body>
+</html>
